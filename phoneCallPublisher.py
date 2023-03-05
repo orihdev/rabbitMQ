@@ -10,7 +10,7 @@ with pika.BlockingConnection(connection_parameters) as connection:
     channel.exchange_declare(exchange='FinalTask',exchange_type='topic')
 
 
-    for i in range(100):
+    for i in range(10000):
         phone1 = fake.phone_number()
         phone2 = fake.phone_number()
         msg = f'{phone1} called {phone2}'
