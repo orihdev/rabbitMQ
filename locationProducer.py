@@ -15,6 +15,8 @@ with pika.BlockingConnection(connection_parameters) as connection:
 
 
     for i in range(10000):
+        phone1 = fake.phone_number()
+        phone2 = fake.phone_number()
         person = fake.name()
         location = fake.city()
         msg = f'{reverse(person)} is in city {reverse(location)}'
