@@ -14,6 +14,6 @@ with pika.BlockingConnection(connection_parameters) as connection:
     channel = connection.channel()
     channel.exchange_declare(exchange='DirectPractice',exchange_type='direct')
     channel.queue_declare(queue='directTask')
-    channel.queue_bind(exchange='DirectPractice',queue='directTask',routing_key=reverse("רנה רוא"))
+    channel.queue_bind(exchange='DirectPractice',queue='directTask',routing_key='אור הנר')
     channel.basic_consume(queue='directTask',on_message_callback=callback,auto_ack=True)
     channel.start_consuming()
